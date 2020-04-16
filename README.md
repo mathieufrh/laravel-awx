@@ -9,21 +9,10 @@ Laravel AWX
 
 Laravel Awx requires [PHP](https://php.net) 7.2-7.4. This particular version supports Laravel 6-7.
 
-You will need to install at least one of the following dependencies for each driver:
-
-* The buzz connector requires `kriswallsmith/buzz` (`^0.15`).
-* The guzzle connector requires `guzzlehttp/guzzle` (`^6.3`).
-
-So, for example, if using the guzzle driver:
-
-```bash
-$ composer require guzzlehttp/guzzle
-```
-
 Add the following dependencies to laravel composer.json
 ```
 "require": {
-    "sdwru/awx": "dev-master",
+    "sdwru/awx-v2": "dev-master",
     "sdwru/oauth2-awx": "dev-master",
     "sdwru/laravel-awx": "dev-master"
 },
@@ -89,10 +78,10 @@ Here you can see an example of just how simple this package is to use. Out of th
 use Sdwru\Awx\Facades\Awx;
 // you can alias this in config/app.php if you like
 
-Awx::droplet()->powerOn(12345);
+Awx::user()->getById(1);
 // we're done here - how easy was that, it just works!
 
-Awx::size()->getAll();
+Awx::job()->getAll();
 // this example is simple, and there are far more methods available
 ```
 
