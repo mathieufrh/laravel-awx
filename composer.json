@@ -25,7 +25,6 @@
         "phpunit/phpunit": "^8.5|^9.0"
     },
     "suggest": {
-        "kriswallsmith/buzz": "Enables the buzz connector.",
         "guzzlehttp/guzzle": "Enables the guzzlehttp connector."
     },
     "autoload": {
