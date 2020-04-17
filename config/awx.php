@@ -37,6 +37,8 @@ return [
     |
     */
 
+    // This is left in from the original code which also supports the 'buzz' http client
+    //  There is no harm in leaving it in here.  Perhaps it will be useful some day.
     'connections' => [
 
         'main' => [
