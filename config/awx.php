@@ -42,11 +42,6 @@ return [
         'main' => [
             'driver'  => 'guzzle',
         ],
-
-        'other' => [
-            'driver'  => 'buzz',
-        ],
-
     ],
     
     'oauth' => [
