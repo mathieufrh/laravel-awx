@@ -48,10 +48,10 @@ class ConnectionFactory
         if (!isset($config['driver'])) {
             throw new InvalidArgumentException('A driver must be specified.');
         }
-
+ 
+        // This is left in from the original code which also supports the buzz http client
+        //  There is no harm in leaving it in here.  Perhaps it will be useful some day.
         switch ($config['driver']) {
-            case 'buzz':
-                return new Connector\BuzzConnector();
             case 'guzzle':
                 return new Connector\GuzzleConnector();
         }
