@@ -59,7 +59,7 @@ This facade will dynamically pass static method calls to the `'awx'` object in t
 
 ##### AwxServiceProvider
 
-This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
+This class contains no public methods of interest. This class uses automatic package discovery and therefore does NOT need to be added to the providers array in `config/app.php`. This class will setup ioc bindings.
 
 ##### Real Examples
 
