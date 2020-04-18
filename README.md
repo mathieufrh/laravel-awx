@@ -41,11 +41,11 @@ The following options should not be changed.
 
 ##### Default Connection Name
 
-This option (`'default'`) is from the upstream code for changing http clients. We only use guzzle in this package so the default value for this setting should be left at `'main'`.
+This option (`'default'`) is from the upstream code for changing http clients that this package is based on. We only use guzzle in this package so the default value for this setting should be left at `'main'`.
 
 ##### Awx Connections
 
-This option (`'connections'`) is where each of the connections are setup for your application. We only use guzzle in this application.
+This option (`'connections'`) is where each of the connections are setup for your application if we were to support more than one http client. We only use guzzle in this application.  We left this in this package for now.  It's possible we will support other clients in the future such as the Laravel v7 http client (also based on guzzle).
 
 #### Oauth credentials
 
