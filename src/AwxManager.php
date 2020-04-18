@@ -144,7 +144,7 @@ class AwxManager extends AbstractManager
      */
     public function getOauthConfig()
     {
-        return $this->getAllConfig('oauth', 'Oauth2');
+        return $this->getNamedConfig('oauth', 'Oauth2', 'credentials');
     }
     
     /**
