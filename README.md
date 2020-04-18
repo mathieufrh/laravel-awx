@@ -109,7 +109,7 @@ Awx::getDefaultConnection(); // this will return main
 Awx::setDefaultConnection('alternative'); // the default is now alternative
 ```
 
-If you prefer to use dependency injection over facades like me, then you can easily inject the manager like so:
+If you prefer to use dependency injection over facades then you can easily inject the manager like so:
 
 ```php
 use Sdwru\Awx\AwxManager;
