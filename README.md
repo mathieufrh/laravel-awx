@@ -33,18 +33,27 @@ To get started, you'll need to publish all vendor assets:
 ```bash
 $ php artisan vendor:publish
 ```
+and select `Provider: Sdwru\Awx\AwxServiceProvider`
 
 This will create a `config/awx.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
 
-There are two config options:
+The following options should not be changed.
 
 ##### Default Connection Name
 
-This option (`'default'`) is where you may specify which of the connections below you wish to use as your default connection for all work. Of course, you may use many connections at once using the manager class. The default value for this setting is `'main'`.
+This option (`'default'`) is from the upstream code for changing http clients. We only use guzzle in this package so the default value for this setting should be left at `'main'`.
 
 ##### Awx Connections
 
-This option (`'connections'`) is where each of the connections are setup for your application. Example configuration has been included, but you may add as many connections as you would like.
+This option (`'connections'`) is where each of the connections are setup for your application. We only use guzzle in this application.
+
+#### Oauth credentials
+
+Gets the AWX password grant credentials from the Laravel .env file.
+
+#### API
+
+Gets the API configuration from the Laravel .env file
 
 
 ## Usage
