@@ -24,15 +24,6 @@ Add the following dependencies to laravel composer.json
 ```
 And run `composer update` from cli.
 
-Once installed, if you are not using automatic package discovery, then you need to register the `Sdwru\Awx\AwxServiceProvider` service provider in your `config/app.php`.
-
-You can also optionally alias our facade:
-
-```php
-        'Awx' => Sdwru\Awx\Facades\Awx::class,
-```
-
-
 ## Configuration
 
 Laravel Awx requires connection configuration.
