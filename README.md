@@ -17,7 +17,7 @@ Add the following dependencies to laravel composer.json
     "sdwru/laravel-awx": "dev-master"
 },
 "repositories": [
-    { "type": "git", "url": "https://github.com/sdwru/awx.git" },
+    { "type": "git", "url": "https://github.com/sdwru/awx-v2.git" },
     { "type": "git", "url": "https://github.com/sdwru/oauth2-awx.git" },
     { "type": "git", "url": "https://github.com/sdwru/laravel-awx.git" }
 ],
