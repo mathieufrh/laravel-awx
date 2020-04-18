@@ -176,27 +176,6 @@ class AwxManager extends AbstractManager
     }
     
     /**
-     * Get all configuration parameters for given type.
-     *
-     * @param string $type
-     * @param string $desc
-     *
-     * @throws \InvalidArgumentException
-     *
-     * @return array
-     */
-    protected function getAllConfig(string $type, string $desc)
-    {
-        $data = $this->config->get($this->getConfigName().'.'.$type);
-
-        if (!is_array($data) && !$data) {
-            throw new InvalidArgumentException("$desc not configured.");
-        }
-
-        return $data;
-    }
-    
-    /**
      * Make the connection instance.
      *
      * @param string $name
