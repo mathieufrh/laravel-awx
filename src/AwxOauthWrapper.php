@@ -44,31 +44,39 @@ class AwxOauthWrapper
         // If not expired use it, otherwise refresh it.
         // If refresh fails generate new access token and replace it for the existing in cache storage
         if (Cache::has('tokens')) {
-
-            $existingTokens = Cache::get('tokens');
             
-            if ($existingTokens->hasExpired()) {
-                $newAccessTokens = $provider->getAccessToken('refresh_token', [
-                    'refresh_token' => $existingTokens->getRefreshToken()
-                ]);
+            try {
 
-                if ($newAccessTokens === 'EXPIRED_REFRESH_TOKEN') {
+                $existingTokens = Cache::get('tokens');
 
-                    // If refresh token is expired the only option left is to get new tokens using the resource owner password credentials grant.
-                    $newPassGrantTokens = $oauth->passCredGrant();
+                if ($existingTokens->hasExpired()) {
+                    $newAccessTokens = $provider->getAccessToken('refresh_token', [
+                        'refresh_token' => $existingTokens->getRefreshToken()
+                    ]);
 
-                    // Purge old atokens and store new tokens to storage.
-                    Cache::forever('tokens', $newPassGrantTokens);
+                    if ($newAccessTokens === 'EXPIRED_REFRESH_TOKEN') {
 
-                    return $newPassGrantTokens->getToken();
-                     
-                } else {
-                    
-                    // Purge old tokens and store refreshed tokens.
-                    Cache::forever('tokens', $newAccessTokens);
- 
-                    return $newAccessTokens->getToken();
+                        // If refresh token is expired the only option left is to get new tokens using the resource owner password credentials grant.
+                        $newPassGrantTokens = $oauth->passCredGrant();
+
+                        // Purge old atokens and store new tokens to storage.
+                        Cache::forever('tokens', $newPassGrantTokens);
+
+                        return $newPassGrantTokens->getToken();
+
+                    } else {
+
+                        // Purge old tokens and store refreshed tokens.
+                        Cache::forever('tokens', $newAccessTokens);
+
+                        return $newAccessTokens->getToken();
+                    }
                 }
+            } catch (\Exception $e) {
+                // All hope is lost. Purge the existing token and hope it all works out on a page refresh.
+                // The one case I know about where this is needed is when the token is deleted on the AWX server.
+                Cache::forget('tokens');
+                return $e->getMessage();
             }
 
         // If tokens do not exist, generate them.
