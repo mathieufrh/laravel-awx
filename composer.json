@@ -48,6 +48,9 @@
             "providers": [
                 "Sdwru\\Awx\\AwxServiceProvider"
             ]
+            "aliases": {
+            "Awx": "Sdwru\\Awx\\Facades"
+            }
         }
     },
     "minimum-stability": "dev",
