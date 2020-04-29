@@ -47,7 +47,7 @@
         "laravel": {
             "providers": [
                 "Sdwru\\Awx\\AwxServiceProvider"
-            ]
+            ],
             "aliases": {
             "Awx": "Sdwru\\Awx\\Facades"
             }
