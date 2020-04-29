@@ -218,3 +218,4 @@ class AwxManager extends AbstractManager
         $config['sslVerify'] = $ssl['verify'];
         return $this->createOauth($config);
     }
+}
