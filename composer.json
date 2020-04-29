@@ -49,7 +49,7 @@
                 "Sdwru\\Awx\\AwxServiceProvider"
             ],
             "aliases": {
-            "Awx": "Sdwru\\Awx\\Facades"
+            "Awx": "Sdwru\\Awx\\Facade"
             }
         }
     },
