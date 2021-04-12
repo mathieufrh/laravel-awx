@@ -14,7 +14,7 @@
         "graham-campbell/manager": "^4.5",
         "illuminate/contracts": "^6.0|^7.0|^8.0",
         "illuminate/support": "^6.0|^7.0|^8.0",
-        "sdwru/awx-v2": "^2.3"
+        "shllghst/awx-v2": "^2.3"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^3.0",
